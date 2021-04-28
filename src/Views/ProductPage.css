@@ -1,0 +1,62 @@
+.productPage {
+  position: relative;
+  margin-top: 70px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.productPage__imageContainer {
+  flex: 0.4;
+  max-width: 300px;
+}
+
+.productPage__imageContainer > img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.stepper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.prodcutPage__detailsContainer {
+  flex: 0.6;
+  width: 100%;
+  margin-left: 20px;
+  position: relative;
+}
+
+.product__btnContainer {
+  display: block;
+}
+
+.product__btnContainer > button {
+  margin-top: 10px;
+}
+
+.reviews__container {
+  padding: 20px;
+}
+
+.reviews {
+  margin-top: 20px;
+  border-top: 1px solid gray;
+  padding: 5px;
+  overflow: scroll;
+}
+.review__head {
+  display: flex;
+  align-items: center;
+}
+
+.productOffers > p {
+  margin-top: 4px;
+}
+
+.offer__icon {
+  color: green !important;
+  transform: rotate(135deg);
+}

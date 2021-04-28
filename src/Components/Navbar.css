@@ -1,0 +1,103 @@
+.navbar {
+  background-color: white;
+  z-index: 1000;
+  border-bottom: 0.3px solid gainsboro;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+}
+
+.navbar__logo {
+  object-fit: contain;
+  width: 60px;
+}
+
+.nav__search {
+  flex: 0.4;
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #f5f5f6;
+  border-radius: 5px;
+  align-items: center;
+  width: 50%;
+}
+
+.nav__searchIcon {
+  color: gray !important;
+  padding: 3px;
+}
+
+.nav__search > input {
+  background-color: #f5f5f6;
+  border-radius: 5px;
+  width: 96%;
+  min-width: 200px;
+  height: 35px;
+  font-size: 14px;
+  outline: none;
+  border: none;
+}
+
+.nav__right {
+  flex: 0.3;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav__rightItem {
+  display: grid;
+  cursor: pointer;
+  position: relative;
+  place-items: center;
+}
+
+.nav__rightItem > p {
+  font-size: 12px;
+}
+
+.navbar__btnBecomeSeller {
+  cursor: pointer;
+  user-select: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav__logo {
+    height: 40%;
+  }
+  .nav__search {
+    display: none;
+  }
+  .nav__searchIcon {
+    display: block;
+  }
+  .nav__right {
+    flex: 0.5;
+  }
+  .navbar__btnBecomeSeller {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .nav__logo {
+    height: 20%;
+  }
+  .nav__search {
+    display: none;
+  }
+  .nav__searchIcon {
+    visibility: block;
+  }
+  .nav__right {
+    flex: 0.6;
+  }
+  .navbar__btnBecomeSeller {
+    font-size: 10px;
+  }
+}

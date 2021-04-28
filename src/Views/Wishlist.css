@@ -1,0 +1,45 @@
+.wishlist {
+  margin-top: 70px;
+  padding: 20px;
+}
+
+.wishlist > h2 {
+  font-weight: 500;
+}
+
+.wishlistItem {
+  border-top: 1px solid gray;
+  margin-top: 10px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.wishlistItem > img {
+  width: 150px;
+  height: 150px;
+  flex: 0.2;
+  object-fit: contain;
+}
+
+.wishlistDetails {
+  margin-left: 13px;
+  flex: 0.7;
+}
+
+.wishlistDetails > p {
+  margin-top: 5px;
+  position: relative;
+}
+
+.wishlistDetails > h4 {
+  margin-top: 20px;
+}
+
+.productName {
+  cursor: pointer;
+}
+
+.productName:hover{
+  color:coral
+}

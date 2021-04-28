@@ -1,0 +1,146 @@
+.cart {
+  margin-top: 70px;
+  padding: 10px;
+  display: flex;
+}
+
+.cartItems {
+  flex: 0.7;
+}
+
+.cartTotal {
+  position: relative;
+
+  margin-left: 20px;
+  flex: 0.3;
+}
+
+.cartItem__product {
+  border-top: 1px solid black;
+  padding-top: 10px;
+
+  display: flex;
+  margin-top: 30px;
+}
+
+.cartItem__product > img {
+  width: 150px;
+  height: 150px;
+  flex: 0.2;
+  object-fit: contain;
+}
+
+.cartItem__productDetials {
+  margin-left: 10px;
+  flex: 0.7;
+  object-fit: contain;
+}
+
+.cartItem__productDetials > h4 {
+  margin-top: 15px;
+}
+
+.cartItem__quantity {
+  margin-top: 15px;
+
+  border: 1px solid gray;
+  width: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartTotal > h3 {
+  font-weight: 400;
+  border-bottom: 1px solid gray;
+  padding-bottom: 5px;
+}
+
+.cartTotal__details > button {
+  margin-top: 5px;
+  background-color: orange;
+  color: white;
+}
+
+.cartTotal__details > button:hover {
+  background-color: coral;
+}
+
+.cartTotal__detailItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.cartTotal__totalAmount {
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px dotted gray;
+  border-bottom: 1px dotted gray;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.cartItem__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.cartItem__bottom > button {
+  margin-top: 13px;
+  background-color: lightcoral;
+  color: white;
+}
+
+.cartItem__bottom > button:hover {
+  background-color: lightcoral;
+  color: white;
+}
+
+@media only screen and (max-width: 700px) {
+  .cart {
+    flex-direction: column;
+  }
+  .cartItems {
+    flex: 1;
+    margin-bottom: 250px;
+  }
+  .cartTotal {
+    position: fixed;
+    bottom: 0;
+    width: 93%;
+    padding: 10px;
+    flex: 1;
+    background-color: white;
+    padding-top: 20px;
+    margin-left: 0;
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .cart {
+    flex-direction: column;
+  }
+  .cartItems {
+    flex: 1;
+    margin-bottom: 250px;
+  }
+  .cartTotal {
+    position: fixed;
+    bottom: 0;
+    width: 93%;
+    padding: 10px;
+    flex: 1;
+    background-color: white;
+    border-radius: 10px;
+    padding-top: 20px;
+    margin-left: 0;
+    margin-top: 30px;
+  }
+}

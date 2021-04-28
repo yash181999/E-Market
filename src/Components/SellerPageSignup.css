@@ -1,0 +1,15 @@
+.sellerPageSignup > h1{
+    
+    width: 100%;
+    text-align: center;
+}
+
+.sellerPageSignup > h3{
+    color: gray;
+    width: 100%;
+    text-align: center;
+}
+
+.sellerPageSignup__formContainer{
+    max-width: 500px;
+}
