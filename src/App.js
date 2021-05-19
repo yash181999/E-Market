@@ -20,36 +20,33 @@ import Profile from "./Views/Profile";
 import Orders from "./Views/Orders";
 
 function App() {
-    const [{ user }, dispatch] = useStateValue();
+  const [{ user }, dispatch] = useStateValue();
 
-    useEffect(() => {
-      auth.onAuthStateChanged((authUser) => {
-        console.log("The User Is >>>", authUser);
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      console.log("The User Is >>>", authUser);
 
-        if (authUser) {
-          //the user is logged in
-          dispatch({
-            type: "SET_USER",
-            user: authUser,
-          });
-        } else {
-          console.log("logged out");
-          dispatch({
-            type: "SET_USER",
-            user: null,
-          });
-        }
-      });
-    }, [auth]);
+      if (authUser) {
+        //the user is logged in
+        dispatch({
+          type: "SET_USER",
+          user: authUser,
+        });
+      } else {
+        console.log("logged out");
+        dispatch({
+          type: "SET_USER",
+          user: null,
+        });
+      }
+    });
+  }, [auth]);
 
+  const { clickedDocId, setClickedDocId } = useGlobalContext();
 
-    const { clickedDocId, setClickedDocId } = useGlobalContext();
-
-    useEffect(() => {
-      setClickedDocId(localStorage.getItem("clickedDocId"));
-    }, []);
-
-  
+  useEffect(() => {
+    setClickedDocId(localStorage.getItem("clickedDocId"));
+  }, []);
 
   return (
     <Router>

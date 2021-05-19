@@ -12,50 +12,57 @@ const firebaseConfig = {
   measurementId: "G-CBHZ9HK58H",
 };
 
+const firebaseApp = firebase.initializeApp(firebaseConfig);
 
- const firebaseApp = firebase.initializeApp(firebaseConfig);
+const db = firebaseApp.firestore();
 
- const db = firebaseApp.firestore();
+const auth = firebase.auth();
 
- const auth = firebase.auth();
+var storageRef = firebase.storage().ref();
 
- var storageRef = firebase.storage().ref();
+export const addToWishlist = async (uid, productId) => {
+  await db
+    .collection("Product")
+    .doc(productId)
+    .update({
+      wishlist: firebase.firestore.FieldValue.arrayUnion(uid),
+    });
+};
 
- export const addToWishlist = async (uid, productId) => {
-  await db.collection('Product').doc(productId).update({
-      wishlist : firebase.firestore.FieldValue.arrayUnion(uid),
-   })
- }
+export const removeFromWishlist = async (uid, productId) => {
+  await db
+    .collection("Product")
+    .doc(productId)
+    .update({
+      wishlist: firebase.firestore.FieldValue.arrayRemove(uid),
+    });
+};
 
- export const removeFromWishlist = async(uid, productId) => {
-   await db.collection('Product').doc(productId).update({
-     wishlist : firebase.firestore.FieldValue.arrayRemove(uid),
-   })
- }
+export const addToCart = async (uid, productId) => {
+  await db
+    .collection("Product")
+    .doc(productId)
+    .update({
+      cart: firebase.firestore.FieldValue.arrayUnion(uid),
+    });
+};
 
- export const addToCart = async(uid, productId) => {
-   await db
-     .collection("Product")
-     .doc(productId)
-     .update({
-       cart: firebase.firestore.FieldValue.arrayUnion(uid),
-     });
- }
+export const removeFromCart = async (uid, productId) => {
+  await db
+    .collection("Product")
+    .doc(productId)
+    .update({
+      cart: firebase.firestore.FieldValue.arrayRemove(uid),
+    });
+};
 
- export const removeFromCart = async (uid, productId) => {
-   await db
-     .collection("Product")
-     .doc(productId)
-     .update({
-       cart: firebase.firestore.FieldValue.arrayRemove(uid),
-     });
- };
+export const addToOrders = async (uid, productId) => {
+  await db
+    .collection("Product")
+    .doc(productId)
+    .update({
+      orders: firebase.firestore.FieldValue.arrayUnion(uid),
+    });
+};
 
- export const addToOrders = async (uid, productId) => {
-   await db.collection('Product').doc(productId).update({
-     orders : firebase.firestore.FieldValue.arrayUnion(uid),
-   })
- }
-
- export { db, auth, storageRef };
-
+export { db, auth, storageRef };
