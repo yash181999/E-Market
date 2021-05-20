@@ -1,6 +1,7 @@
 .categories {
   padding-left: 20px;
   padding-right: 20px;
+
 }
 
 .categories > h1 {
@@ -21,6 +22,7 @@
   width: 100%;
   border-radius: 30px;
   display: grid;
+  cursor: pointer;
   place-items: center;
   box-shadow: 0 4px 8px 0 rgba(126, 124, 124, 0.1);
 }

@@ -18,6 +18,7 @@ import Wishlist from "./Views/Wishlist";
 import Cart from "./Views/Cart";
 import Profile from "./Views/Profile";
 import Orders from "./Views/Orders";
+import Footer from "./Components/Footer";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
@@ -51,66 +52,105 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <Switch>
-          <Route path="/category_page/mobile">
-            <Navbar />
-            <CategoryPage />
-          </Route>
-          <Route path="/category_page/computer">
-            <Navbar />
-            <CategoryPage />
-          </Route>
-          <Route path="/category_page/tablet">
-            <Navbar />
-            <CategoryPage />
-          </Route>
-          <Route path="/seller_account">
-            <Navbar />
-            <SellerPage />
-          </Route>
+        <>
+          <Switch>
+            <Route path="/category_page/mobile">
+              <Navbar />
+              <CategoryPage />
+              <Footer />
+            </Route>
+            <Route path="/category_page/computer">
+              <Navbar />
+              <CategoryPage />
+              <Footer />
+            </Route>
+            <Route path="/category_page/tablet">
+              <Navbar />
+              <CategoryPage />
+              <Footer />
+            </Route>
+            <Route path="/seller_account">
+              <Navbar />
+              <SellerPage />
+              <Footer />
+            </Route>
 
-          <Route path="/category_page/acessories">
-            <Navbar />
-            <CategoryPage />
-          </Route>
+            <Route path="/category_page/acessories">
+              <Navbar />
+              <CategoryPage />
+              <Footer />
+            </Route>
+            <Route path="/category_page/samsung">
+              <Navbar />
+              <CategoryPage />
+              <Footer />
+            </Route>
+            <Route path="/category_page/apple">
+              <Navbar />
+              <CategoryPage />
+              <Footer />
+            </Route>
+            <Route path="/category_page/dell">
+              <Navbar />
+              <CategoryPage />
+              <Footer />
+            </Route>
+            <Route path="/category_page/hp">
+              <Navbar />
+              <CategoryPage />
+              <Footer />
+            </Route>
+            <Route path="/category_page/lenovo">
+              <Navbar />
+              <CategoryPage />
+              <Footer />
+            </Route>
 
-          <Route path={`/product_page/${clickedDocId}`}>
-            <Navbar />
-            <ProductPage />
-          </Route>
+            <Route path={`/product_page/${clickedDocId}`}>
+              <Navbar />
+              <ProductPage />
+              <Footer />
+            </Route>
 
-          <Route path={`/wishlist`}>
-            <Navbar />
-            <Wishlist />
-          </Route>
-          <Route path={`/cart`}>
-            <Navbar />
-            <Cart />
-          </Route>
+            <Route path={`/wishlist`}>
+              <Navbar />
 
-          <Route path={`/profile`}>
-            <Navbar />
-            <Profile />
-          </Route>
+              <Wishlist />
+              <Footer />
+            </Route>
+            <Route path={`/cart`}>
+              <Navbar />
+              <Cart />
+              <Footer />
+            </Route>
 
-          <Route path={`/my_orders`}>
-            <Navbar />
-            <Orders />
-          </Route>
+            <Route path={`/profile`}>
+              <Navbar />
+              <Profile />
+              <Footer />
+            </Route>
 
-          <Route path="/login">
-            <SellerPageLogin></SellerPageLogin>
-          </Route>
+            <Route path={`/my_orders`}>
+              <Navbar />
+              <Orders />
+              <Footer />
+            </Route>
 
-          <Route path="/signup">
-            <SellerPageSignup />
-          </Route>
+            <Route path="/login">
+              <SellerPageLogin></SellerPageLogin>
+            </Route>
 
-          <Route path="/">
-            <Navbar />
-            <Home />
-          </Route>
-        </Switch>
+            <Route path="/signup">
+              <SellerPageSignup />
+            </Route>
+
+            <Route path="/">
+              <Navbar />
+              <Home />
+              <Footer />
+            </Route>
+          </Switch>
+        </>
       </div>
     </Router>
   );

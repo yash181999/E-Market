@@ -51,7 +51,7 @@ function ProductPage() {
       let array = [productData.imageOne, productData.imageTwo];
       setImages(array);
     }
-  }, []);
+  }, [clickedDocId]);
 
   const addToFavorites = async () => {
     setInFavorites(true);

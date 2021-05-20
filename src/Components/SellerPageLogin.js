@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "../firebase";
+import logo from '../logo.png'
 
 function SellerPageLogin() {
   const history = useHistory();
@@ -51,7 +52,11 @@ function SellerPageLogin() {
   };
 
   return (
-    <div className="sellerPage">
+    <div style = {{padding : '10px'}} className="sellerPage">
+      <img
+        style={{ height : '150px', width: "400px", objectFit: "contain" }}
+        src={logo}
+      ></img>
       <h1>Login</h1>
       <br></br>
       <div className="sellerPageSignup__formContainer">

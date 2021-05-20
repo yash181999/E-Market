@@ -13,7 +13,7 @@ function CategoryPage() {
   const [sortBy, setSortBy] = useState("asc");
   const [category, setCategory] = useState(null);
   const [{ user }] = useStateValue();
-  const [heading,setHeading] = useState('');
+  const [heading, setHeading] = useState("");
 
   const priceLowToHigh = () => {
     setSortBy("asc");
@@ -23,58 +23,113 @@ function CategoryPage() {
     setSortBy("desc");
   };
 
-  const getMobiles =  () => {
+  const getMobiles = () => {
     setLoading(true);
-     db
-      .collection("Product")
+    db.collection("Product")
       .where("productCategory", "==", "Mobile")
       .orderBy("productPrice", sortBy)
       .onSnapshot((value) => {
         setMobiles(value.docs);
       });
-      setHeading('Mobile')
+    setHeading("Mobile");
     setLoading(false);
   };
 
-  const getComputers =  () => {
+  const getComputers = () => {
     setLoading(true);
-     db
-      .collection("Product")
+    db.collection("Product")
       .where("productCategory", "==", "Computer")
       .orderBy("productPrice", sortBy)
       .onSnapshot((value) => {
         setMobiles(value.docs);
       });
-      setHeading("Computers");
+    setHeading("Computers");
     setLoading(false);
   };
 
-  const getTablets =  () => {
+  const getTablets = () => {
     setLoading(true);
-     db
-      .collection("Product")
+    db.collection("Product")
       .where("productCategory", "==", "Tablet")
       .orderBy("productPrice", sortBy)
       .onSnapshot((value) => {
         setMobiles(value.docs);
       });
-      setHeading("Tablets");
+    setHeading("Tablets");
     setLoading(false);
   };
 
-  const getAcessories =  () => {
+  const getAcessories = () => {
     setLoading(true);
-     db
-      .collection("Product")
+    db.collection("Product")
       .where("productCategory", "==", "Acessories")
       .orderBy("productPrice", sortBy)
       .onSnapshot((value) => {
         setMobiles(value.docs);
       });
-      setHeading("Acessories");
+    setHeading("Acessories");
     setLoading(false);
   };
 
+  const getSamsung = () => {
+    setLoading(true);
+    db.collection("Product")
+      .where("productBrand", "==", "Samsung")
+      .orderBy("productPrice", sortBy)
+      .onSnapshot((value) => {
+        setMobiles(value.docs);
+      });
+    setHeading("Samsung");
+    setLoading(false);
+  };
+
+  const getApple = () => {
+    setLoading(true);
+    db.collection("Product")
+      .where("productBrand", "==", "Apple")
+      .orderBy("productPrice", sortBy)
+      .onSnapshot((value) => {
+        setMobiles(value.docs);
+      });
+    setHeading("Apple");
+    setLoading(false);
+  };
+
+  const getDell = () => {
+    setLoading(true);
+    db.collection("Product")
+      .where("productBrand", "==", "Dell")
+      .orderBy("productPrice", sortBy)
+      .onSnapshot((value) => {
+        setMobiles(value.docs);
+      });
+    setHeading("Dell");
+    setLoading(false);
+  };
+
+  const getHp = () => {
+    setLoading(true);
+    db.collection("Product")
+      .where("productBrand", "==", "HP")
+      .orderBy("productPrice", sortBy)
+      .onSnapshot((value) => {
+        setMobiles(value.docs);
+      });
+    setHeading("HP");
+    setLoading(false);
+  };
+
+  const getSony = () => {
+    setLoading(true);
+    db.collection("Product")
+      .where("productBrand", "==", "Lenovo")
+      .orderBy("productPrice", sortBy)
+      .onSnapshot((value) => {
+        setMobiles(value.docs);
+      });
+    setHeading("Lenovo");
+    setLoading(false);
+  };
 
   useEffect(() => {
     let location = window.location.pathname;
@@ -84,6 +139,11 @@ function CategoryPage() {
     else if (location === "/category_page/computer") getComputers();
     else if (location === "/category_page/tablet") getTablets();
     else if (location === "/category_page/acessories") getAcessories();
+    else if (location === "/category_page/samsung") getSamsung();
+    else if (location === "/category_page/dell") getDell();
+    else if (location === "/category_page/hp") getHp();
+    else if (location === "/category_page/lenovo") getSony();
+    else if (location === "/category_page/apple") getApple();
   }, [sortBy]);
 
   return (
@@ -122,7 +182,7 @@ function CategoryPage() {
           );
         })
       ) : (
-        <div>
+        <div style={{ height: "1000px" }}>
           <Shimmer>
             <div className="shimmer__box"></div>
             <br></br>

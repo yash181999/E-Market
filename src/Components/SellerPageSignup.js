@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import "./SellerPageSignup.css";
 import { auth, db } from "../firebase";
 import { useStateValue } from "../StateProvider";
-
+import logo from "../logo.png";
 function SellerPageSignup() {
   const history = useHistory();
   const [email, setEmail] = useState("");
@@ -16,7 +16,6 @@ function SellerPageSignup() {
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
-
       if (authUser) {
         //the user is logged in
         dispatch({
@@ -71,7 +70,8 @@ function SellerPageSignup() {
 
   return (
     <div className="sellerPage">
-      <h1>Welcome to Meesho</h1>
+      <img style={{ height: "100px", width: "200px" , objectFit :'contain'}} src={logo}></img>
+      <h1>Welcome!</h1>
       <h3>Join us and start selling your electronic items</h3>
       <br></br>
       <div className="sellerPageSignup__formContainer">

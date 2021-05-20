@@ -1,6 +1,7 @@
 .wishlist {
   margin-top: 70px;
   padding: 20px;
+  min-height: 100vh;
 }
 
 .wishlist > h2 {
@@ -40,6 +41,6 @@
   cursor: pointer;
 }
 
-.productName:hover{
-  color:coral
+.productName:hover {
+  color: coral;
 }
