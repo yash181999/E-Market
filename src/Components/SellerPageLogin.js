@@ -39,7 +39,7 @@ function SellerPageLogin() {
     e.preventDefault();
     //do some firebase login
     await auth
-      .signInWithEmailAndPassword("demouser@codeinsta.com", "1234567")
+      .signInWithEmailAndPassword("demouser@emarket.com", "demo123")
       .then((auth) => {
         if (auth) {
           const uId = auth.uId;
@@ -52,9 +52,9 @@ function SellerPageLogin() {
   };
 
   return (
-    <div style = {{padding : '10px'}} className="sellerPage">
+    <div style={{ padding: "10px" }} className="sellerPage">
       <img
-        style={{ height : '150px', width: "400px", objectFit: "contain" }}
+        style={{ height: "150px", width: "400px", objectFit: "contain" }}
         src={logo}
       ></img>
       <h1>Login</h1>
@@ -108,6 +108,18 @@ function SellerPageLogin() {
             >
               <CircularProgress />
             </div>
+          )}
+          {!loading && (
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              style={{ color: "white", backgroundColor: "green"  , marginTop: '10px'}}
+              
+              onClick={demoSignIn}
+            >
+              Demo Login
+            </Button>
           )}
         </form>
         <br></br>

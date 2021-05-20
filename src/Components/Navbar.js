@@ -117,6 +117,7 @@ function Navbar() {
     setClickedDocId(docId);
     docId && history.push(`/product_page/${docId}`);
     setAnchorEl(null);
+    setSearchText('');
   };
 
   return (
