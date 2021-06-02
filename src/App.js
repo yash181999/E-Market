@@ -52,7 +52,12 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <>
+        {!user && (
+         
+            <SellerPageLogin></SellerPageLogin>
+          
+        )}
+        {user && <>
           <Switch>
             <Route path="/category_page/mobile">
               <Navbar />
@@ -150,7 +155,7 @@ function App() {
               <Footer />
             </Route>
           </Switch>
-        </>
+        </>}
       </div>
     </Router>
   );
